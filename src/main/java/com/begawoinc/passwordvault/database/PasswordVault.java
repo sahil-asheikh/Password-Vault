@@ -15,27 +15,30 @@ import java.sql.SQLException;
  */
 public class PasswordVault {
 
-    private static final String DATABASE = PasswordVault.class.getSimpleName().toLowerCase();
     private static final String JDBC_DRIVER = "com.mysql.cj.jdbc.Driver";
-    private static final String DB_URL = "jdbc:mysql://localhost/" + DATABASE;
+
+//    Live database URL, username and password
+//    CLEARDB_DATABASE_URL ==> mysql://bd9304fc3e58f3:c78956e6@us-cdbr-east-05.cleardb.net/heroku_ad5e21ffb6191cc?reconnect=true
+     
+//    private static final String DATABASE = "heroku_ad5e21ffb6191cc".toLowerCase();
+//    private static final String DB_URL = "jdbc:mysql://us-cdbr-east-05.cleardb.net/" + DATABASE;
+//    private static final String USER = "bd9304fc3e58f3";
+//    private static final String PASS = "c78956e6";
     
-//    Local username and password
+//    Local database URL, username and password
+    private static final String DATABASE = PasswordVault.class.getSimpleName().toLowerCase();
+    private static final String DB_URL = "jdbc:mysql://localhost/" + DATABASE;
     private static final String USER = "root";
     private static final String PASS = "admin";
-
-//    Live username and password
-//    private static final String USER = "live_root";
-//    private static final String PASS = "live_admin";
-    
 
     public static Connection connectDb() {
         Connection con = null;
         try {
             Class.forName(JDBC_DRIVER);
             con = DriverManager.getConnection(DB_URL, USER, PASS);
-            System.out.println("com.qt.sad.database.PasswordVault.connectDb()::DATABASE `" + DATABASE + "` CONNECTED");
+            System.out.println("com.begawoinc.PasswordVault.connectDb()::DATABASE `" + DATABASE + "` CONNECTED");
         } catch (ClassNotFoundException | SQLException e) {
-            System.out.println("com.qt.sad.database.Quizdb.connectDb()::" + e.getMessage());
+            System.out.println("com.begawoinc.Quizdb.connectDb()::" + e.getMessage());
         }
         return con;
     }

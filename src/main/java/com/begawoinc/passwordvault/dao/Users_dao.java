@@ -5,16 +5,10 @@
  */
 package com.begawoinc.passwordvault.dao;
 
-import com.begawoinc.passwordvault.database.PasswordVault;
-import com.begawoinc.passwordvault.enums.PasswordResponseMessages;
 import com.begawoinc.passwordvault.model.Users;
-import com.begawoinc.passwordvault.utility.Utils;
 import java.sql.CallableStatement;
 import java.sql.Connection;
 import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.util.ArrayList;
-import java.util.List;
 
 /**
  *

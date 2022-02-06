@@ -4,85 +4,165 @@
     Author     : LENOVO
 --%>
 
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@page contentType="text/html" pageEncoding="UTF-8" errorPage="error-page.jsp"%>
 <!DOCTYPE html>
-<!DOCTYPE html>
-<html>
-
+<html lang="en">
     <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <title>Dashboard</title>
 
-        <!-- Meta Tags -->
-        <meta property="og:title" content="BegawoInc" />
-        <meta property="og:url" content="https://www.begawosoft.com/" />
-        <meta property="og:description" content="We deliver customized software solutions and services for business solutions. Among a plethora of services, web development, mobile development, E-Commerce Solutions, embedded applications, IoT tools and applications, and more that we offer.">
-        <meta property="og:image" itemprop="image" content="assets/img/favicon-2.png" />
-        <meta property="og:type" content="article" />
-        <meta property="og:locale" content="en_GB" />
-
-        <!-- Favicons -->
-        <link href="assets/img/favicon-2.png" rel="icon">
-        <link href="assets/img/favicon-2.png" rel="apple-touch-icon">
-
-        <!-- Bootstrap CSS -->
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-
-        <!-- External CSS -->
-        <link rel="stylesheet" href="assets/css/sidebar.css">
-        <link rel="stylesheet" href="assets/css/style.css">
+        <!-- plugins:css -->
+        <link rel="stylesheet" href="assets/vendors/mdi/css/materialdesignicons.min.css">
+        <link rel="stylesheet" href="assets/vendors/css/vendor.bundle.base.css">
 
         <!-- Font Style - M PLUS Rounded 1c (Bold 700)  -->
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@700&display=swap" rel="stylesheet">
+        <style>
+            .beg-font-mplusrounded1c {
+                font-family: 'M PLUS Rounded 1c', sans-serif;
+            }
 
-        <!-- Bootstrap Icons -->
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
+            .beg-font-segoeui {
+                font-family: 'Segoe UI', sans-serif;
+            }
+        </style>
 
-        <!-- Font Awesome JS -->
-        <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js" integrity="sha384-tzzSw1/Vo+0N5UhStP3bvwWPq+uvzCMfrN1fEFe+xBmv1C/AtVX5K0uZtmcHitFZ" crossorigin="anonymous"></script>
-        <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/fontawesome.js" integrity="sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VTOY" crossorigin="anonymous"></script>
+        <!-- Layout styles -->
+        <link rel="stylesheet" href="assets/css/style.css">
+        <!-- End layout styles -->
+        <link rel="shortcut icon" href="assets/images/favicon.png" />
+
 
     </head>
-
-    <body class="beg-bg">
-        <div class="wrapper">
-            <!-- Sidebar  -->
+    <body>
+        <div class="container-scroller">
+            <!--Side bar-->
             <%@include file="sidebar.jsp" %>
-            <!-- Sidebar  -->
-
-            <!-- Page Content  -->
-            <div id="content">
-
+            <!--/Side bar-->
+            <div class="container-fluid page-body-wrapper">
                 <!--Nav bar-->
                 <%@include file="navbar.jsp" %>
                 <!--/Nav bar-->
+                <div class="main-panel">
 
-                <!-- Main -->
-                <main class="main beg-bg text-light">
+                    <!--Main content-->
+                    <div class="content-wrapper">
 
-                </main>
-                <!-- /Main -->
+                        <div class="row mt-md-3 mt-xl-3">
+                            <div class="col-md-7 col-xl-7">
+                                <div class="grid-margin stretch-card">
+                                    <div class="card">
+                                        <div class="card-body">
+                                            <h4 class="beg-font-mplusrounded1c card-title fw-bold">Your Passwords</h4>
+                                            </p>
+                                            <div class="table-responsive">
+                                                <table class="table">
+                                                    <thead>
+                                                        <tr>
+                                                            <th class="beg-font-mplusrounded1c fw-bold">Social</th>
+                                                            <th class="beg-font-mplusrounded1c fw-bold">Username</th>
+                                                            <th class="beg-font-mplusrounded1c fw-bold">Email</th>
+                                                            <th class="beg-font-mplusrounded1c fw-bold">Action</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr>
+                                                            <td class="beg-font-segoeui">Instagram</td>
+                                                            <td class="beg-font-segoeui">sahil_asheikh</td>
+                                                            <td class="beg-font-segoeui">sahil_asheikh@gmail.com</td>
+                                                            <td class="beg-font-mplusrounded1c">
+                                                                <a href="#" class="badge badge-success d-block d-sm-none">Revel <i class="mdi mdi-arrow-right-bold"></i></a>
+                                                                <a href="#" class="badge badge-success d-none d-md-block d-xl-block">Revel <i class="mdi mdi-arrow-right-bold"></i></a>
+                                                            </td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-5 col-xl-5 d-none d-md-block d-xl-block">
+                                <div class="grid-margin stretch-card">
+                                    <div class="card">
+                                        <div class="card-body">
+                                            <h4 class="card-title">Password</h4>
+                                            <div class="d-none d-md-block d-xl-block mt-2 my-md-3 my-xl-3 text-center">
+                                                <img class="img-fluid bg-light rounded-circle p-3 w-25" src="assets/images/favicon.png">
+                                            </div>
+                                            <div class="bg-gray-dark d-flex d-md-block d-xl-flex flex-row py-3 px-4 px-md-3 px-xl-4 rounded mt-3">
+                                                <div class="text-md-center text-xl-left">
+                                                    <h6 class="mb-1">Instagram</h6>
+                                                    <p class="text-muted mb-0">instagram.com</p>
+                                                </div>
+                                            </div>
+                                            <div class="bg-gray-dark d-flex d-md-block d-xl-flex flex-row py-3 px-4 px-md-3 px-xl-4 rounded mt-3">
+                                                <div class="text-md-center text-xl-left">
+                                                    <h6 class="mb-1">Username</h6>
+                                                    <p class="text-muted mb-0">username</p>
+                                                </div>
+                                            </div>
+                                            <div class="bg-gray-dark d-flex d-md-block d-xl-flex flex-row py-3 px-4 px-md-3 px-xl-4 rounded mt-3">
+                                                <div class="text-md-center text-xl-left">
+                                                    <h6 class="mb-1">Email</h6>
+                                                    <p class="text-muted mb-0">username@gmail.com</p>
+                                                </div>
+                                            </div>
+                                            <div class="bg-gray-dark d-flex d-md-block d-xl-flex flex-row py-3 px-4 px-md-3 px-xl-4 rounded mt-3">
+                                                <div class="text-md-center text-xl-left">
+                                                    <h6 class="mb-1">Password</h6>
+                                                    <p class="text-muted mb-0">my password</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="card-footer">
+                                            <div class="row">
+                                                <div class="col-6">
+                                                    <a href="#" class="my-2 w-100 badge badge-primary">
+                                                        Update <i class="mdi mdi-update"></i>
+                                                    </a>
+                                                </div>
+                                                <div class="col-6">
+                                                    <a href="#" class="mt-2 w-100 badge badge-danger">
+                                                        Delete <i class="mdi mdi-delete"></i>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <!--/Main content-->
+
+                    <!--Footer-->
+                    <%@include file="footer.jsp" %>
+                    <!--/Footer-->
+                </div>
+                <!-- main-panel ends -->
             </div>
+            <!-- page-body-wrapper ends -->
         </div>
-
-        <!-- jQuery CDN - Slim version (=without AJAX) -->
-        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-        <!-- Popper.JS -->
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
-        <!-- Bootstrap JS -->
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
-
-        <script type="text/javascript">
-            $(document).ready(function () {
-                $('#sidebarCollapse').on('click', function () {
-                    $('#sidebar').toggleClass('active');
-                });
-            });
-        </script>
+        <!-- container-scroller -->
+        <!-- plugins:js -->
+        <script src="assets/vendors/js/vendor.bundle.base.js"></script>
+        <!-- endinject -->
+        <!-- Plugin js for this page -->
+        <!-- End plugin js for this page -->
+        <!-- inject:js -->
+        <script src="assets/js/off-canvas.js"></script>
+        <script src="assets/js/hoverable-collapse.js"></script>
+        <script src="assets/js/misc.js"></script>
+        <script src="assets/js/settings.js"></script>
+        <script src="assets/js/todolist.js"></script>
+        <!-- endinject -->
+        <!-- Custom js for this page -->
+        <!-- End custom js for this page -->
     </body>
-
 </html>

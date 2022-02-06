@@ -1,8 +1,8 @@
-D:\Begawo-Soft\SaaS-Templates\Password-Vault\src\main\java\com\begawoinc\passwordvault\service\Users_service.java
-D:\Begawo-Soft\SaaS-Templates\Password-Vault\src\main\java\com\begawoinc\passwordvault\controllers\Users_controller.java
-D:\Begawo-Soft\SaaS-Templates\Password-Vault\src\main\java\com\begawoinc\passwordvault\utility\Utils.java
-D:\Begawo-Soft\SaaS-Templates\Password-Vault\src\main\java\com\begawoinc\passwordvault\model\Users.java
-D:\Begawo-Soft\SaaS-Templates\Password-Vault\src\main\java\com\begawoinc\passwordvault\enums\PasswordResponseMessages.java
-D:\Begawo-Soft\SaaS-Templates\Password-Vault\src\main\java\com\begawoinc\passwordvault\enums\AuthResponseMessages.java
-D:\Begawo-Soft\SaaS-Templates\Password-Vault\src\main\java\com\begawoinc\passwordvault\database\PasswordVault.java
-D:\Begawo-Soft\SaaS-Templates\Password-Vault\src\main\java\com\begawoinc\passwordvault\dao\Users_dao.java
+D:\Begawo-Soft\SaaS-Templates\WORKSPACE\Password-Vault\src\main\java\com\begawoinc\passwordvault\service\Users_service.java
+D:\Begawo-Soft\SaaS-Templates\WORKSPACE\Password-Vault\src\main\java\com\begawoinc\passwordvault\model\Users.java
+D:\Begawo-Soft\SaaS-Templates\WORKSPACE\Password-Vault\src\main\java\com\begawoinc\passwordvault\dao\Users_dao.java
+D:\Begawo-Soft\SaaS-Templates\WORKSPACE\Password-Vault\src\main\java\com\begawoinc\passwordvault\enums\PasswordResponseMessages.java
+D:\Begawo-Soft\SaaS-Templates\WORKSPACE\Password-Vault\src\main\java\com\begawoinc\passwordvault\enums\AuthResponseMessages.java
+D:\Begawo-Soft\SaaS-Templates\WORKSPACE\Password-Vault\src\main\java\com\begawoinc\passwordvault\controllers\Users_controller.java
+D:\Begawo-Soft\SaaS-Templates\WORKSPACE\Password-Vault\src\main\java\com\begawoinc\passwordvault\utility\Utils.java
+D:\Begawo-Soft\SaaS-Templates\WORKSPACE\Password-Vault\src\main\java\com\begawoinc\passwordvault\database\PasswordVault.java
