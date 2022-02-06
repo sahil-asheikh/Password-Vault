@@ -4,12 +4,6 @@
     Author     : LENOVO
 --%>
 
-<%-- 
-    Document   : index
-    Created on : 3 Feb, 2022, 10:24:04 PM
-    Author     : LENOVO
---%>
-
 <%@page contentType="text/html" pageEncoding="UTF-8" errorPage="error-page.jsp"%>
 <!DOCTYPE html>
 <html lang="en">
