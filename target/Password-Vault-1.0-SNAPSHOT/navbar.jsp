@@ -32,11 +32,11 @@
         </ul>
         <ul class="navbar-nav navbar-nav-right">
             <li class="nav-item dropdown d-none d-lg-block">
-                <a class="nav-link btn btn-success create-new-button beg-font-mplusrounded1c" id="createbuttonDropdown" data-toggle="dropdown" aria-expanded="false" href="#">Add New Password</a>
-                <div class="dropdown-menu dropdown-menu-right navbar-dropdown preview-list" aria-labelledby="createbuttonDropdown">
-                    <h6 class="p-3 mb-0 beg-font-mplusrounded1c">Create New Password</h6>
-
-                </div>
+                <!-- Button to trigger save password modal -->
+                <button type="button" class="nav-link btn btn-success create-new-button beg-font-mplusrounded1c" data-toggle="modal" data-target="#savePassword">
+                    Create New Password
+                </button>
+                <!-- /Button to trigger save password modal -->
             </li>
             <!--<li class="nav-item dropdown">
                 <a class="nav-link" id="profileDropdown" href="#" data-toggle="dropdown">
@@ -73,8 +73,58 @@
                 </div>
             </li>-->
         </ul>
+        <!-- Button to trigger save password modal -->
+        <button type="button" class="navbar-toggler navbar-toggler-right d-lg-none align-self-center beg-font-mplusrounded1c text-success" data-toggle="modal" data-target="#savePassword">
+            <span class="mdi mdi-plus-box-outline text-success"></span>
+            <!--Add Password-->
+        </button>
+        <!-- /Button to trigger save password modal -->
         <button class="navbar-toggler navbar-toggler-right d-lg-none align-self-center" type="button" data-toggle="offcanvas">
-            <span class="mdi mdi-format-line-spacing"></span>
+            <span class="mdi mdi-format-line-spacing text-primary"></span>
         </button>
     </div>
 </nav>
+
+<!-- Modal to add password -->
+<div class="modal fade" id="savePassword" tabindex="-1" aria-labelledby="savePasswordLabel" aria-hidden="true">
+    <div class="modal-dialog mx-3 m-md-auto m-xl-auto m-lg-auto">
+        <div class="modal-content">
+
+            <div class="modal-header">
+                <h5 class="modal-title" id="savePasswordLabel">Add Password</h5>
+                <button type="button" class="btn-close bg-danger rounded border-0" data-dismiss="modal" aria-label="Close">
+                    <span class="mdi mdi-close text-light"></span>
+                </button>
+            </div>
+
+            <form class="modal-body">
+                <div class="form-group">
+                    <label for="exampleInputUsername1">Password</label>
+                    <input type="text" required class="form-control" placeholder="Password">
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Key</label>
+                    <input type="number" required class="form-control" placeholder="0 to 99">
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputPassword1">Username</label>
+                    <input type="text" required class="form-control" placeholder="Enter your username">
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputConfirmPassword1">Email</label>
+                    <input type="email" required class="form-control" placeholder="Enter your account email">
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputConfirmPassword1">App Name</label>
+                    <input type="text" required class="form-control" placeholder="Enter app name">
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputConfirmPassword1">App URL</label>
+                    <input type="url" required class="form-control" placeholder="Enter app url">
+                </div>
+                <button type="submit" class="btn btn-primary mr-2">Submit</button>
+                <button class="btn btn-dark" data-dismiss="modal">Cancel</button>
+            </form>
+        </div>
+    </div>
+</div>

@@ -45,7 +45,7 @@
                     <!--Main content-->
                     <div class="container-scroller">
                         <div class="container-fluid">
-                            <div class="row w-100">
+                            <div class="row">
                                 <div class="content-wrapper full-page-wrapper d-flex align-items-center auth login-bg">
                                     <div class="card col-lg-4 mx-md-auto">
                                         <div class="card-body px-md-5">
