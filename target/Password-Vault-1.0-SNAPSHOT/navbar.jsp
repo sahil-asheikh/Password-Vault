@@ -4,6 +4,13 @@
     Author     : LENOVO
 --%>
 
+<%@page import="com.begawoinc.passwordvault.utility.Utils"%>
+<%
+    if (Utils.isEmpty(String.valueOf(session.getAttribute("user_primary_key")))) {
+        response.sendRedirect("login.jsp?msg=Login Frist");
+    }
+%>
+
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <nav class="navbar p-0 fixed-top d-flex flex-row">
     <div class="navbar-brand-wrapper d-flex d-lg-none align-items-center justify-content-center">

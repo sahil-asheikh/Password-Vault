@@ -50,7 +50,8 @@
                                     <div class="card col-lg-4 mx-md-auto">
                                         <div class="card-body px-md-5">
                                             <h3 class="card-title text-left mb-3">Login</h3>
-                                            <form action="" method="get">
+                                            <form action="Users_controller" method="get">
+                                                <input type="hidden" name="action" value="login">
                                                 <div class="form-group">
                                                     <label>Username</label>
                                                     <input type="text" class="form-control p_input" name="username" placeholder="Please enter your username">

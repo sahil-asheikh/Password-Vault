@@ -5,20 +5,23 @@
  */
 package com.begawoinc.passwordvault.controllers;
 
+import com.begawoinc.passwordvault.enums.AuthResponseMessages;
 import com.begawoinc.passwordvault.model.Users;
 import com.begawoinc.passwordvault.service.Users_service;
+import com.begawoinc.passwordvault.utility.Utils;
 import java.io.IOException;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 /**
  *
  * @author LENOVO
  */
-@WebServlet(name = "Quiz_Category_controller", urlPatterns = {"/Quiz_Category_controller"})
+@WebServlet(name = "Users_controller", urlPatterns = {"/Users_controller"})
 public class Users_controller extends HttpServlet {
 
     /**
@@ -45,7 +48,7 @@ public class Users_controller extends HttpServlet {
             case "signup":
                 signupUser(request, response);
                 break;
-            case "logoutUser":
+            case "logout":
                 logoutUser(request, response);
             default:
                 break;
@@ -91,16 +94,41 @@ public class Users_controller extends HttpServlet {
         return "Short description";
     }// </editor-fold>
 
-    private void loginUser(HttpServletRequest request, HttpServletResponse response) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    private void loginUser(HttpServletRequest request, HttpServletResponse response) throws IOException {
+
+        try {
+            user.setUsername(Utils.requiredNotNull(request.getParameter("username"), "Username should not be empty"));
+            user.setPassword(Utils.requiredNotNull(request.getParameter("password"), "Password should not be empty"));
+            message = user_service.user_login(user, request);
+        } catch (Exception e) {
+            message = "com.begawoinc.passwordvault.controllers.User_controller.userLogin()" + e.getMessage();
+        } finally {
+            if (message.equals(AuthResponseMessages.LOGIN_SUCCESS.getAuthResponseMessage())) {
+                response.sendRedirect("index.jsp?message=" + message);
+            } else {
+                response.sendRedirect("login.jsp?message=" + message);
+            }
+        }
+
     }
 
-    private void signupUser(HttpServletRequest request, HttpServletResponse response) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    private void signupUser(HttpServletRequest request, HttpServletResponse response) throws IOException {
+        try {
+            user.setUsername(Utils.requiredNotNull(request.getParameter("username"), "Username should not be empty"));
+            user.setUser_email(Utils.requiredNotNull(request.getParameter("email"), "Email should not be empty"));
+            user.setPassword(Utils.requiredNotNull(request.getParameter("password"), "Password should not be empty"));
+            message = user_service.register_user(user);
+        } catch (Exception e) {
+            message = "com.begawoinc.passwordvault.controllers.User_controller.register_user()" + e.getMessage();
+        } finally {
+            response.sendRedirect("login.jsp?message=" + message + " please login to continue");
+        }
     }
 
-    private void logoutUser(HttpServletRequest request, HttpServletResponse response) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    private void logoutUser(HttpServletRequest request, HttpServletResponse response) throws IOException {
+        HttpSession session = request.getSession();
+        session.invalidate();
+        response.sendRedirect("login.jsp");
     }
 
 }

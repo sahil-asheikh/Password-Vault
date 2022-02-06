@@ -16,18 +16,18 @@ public class Users {
     private String username;
     private String password;
     private String user_email;
-    private int attempt;
+    private int attempts;
     private int is_deleted;
     private String created_at;
     private String modified_at;
 
-    public Users(int id, String user_primary_key, String username, String password, String user_email, int attempt, int is_deleted, String created_at, String modified_at) {
+    public Users(int id, String user_primary_key, String username, String password, String user_email, int attempts, int is_deleted, String created_at, String modified_at) {
         this.id = id;
         this.user_primary_key = user_primary_key;
         this.username = username;
         this.password = password;
         this.user_email = user_email;
-        this.attempt = attempt;
+        this.attempts = attempts;
         this.is_deleted = is_deleted;
         this.created_at = created_at;
         this.modified_at = modified_at;
@@ -76,12 +76,12 @@ public class Users {
         this.user_email = user_email;
     }
 
-    public int getAttempt() {
-        return attempt;
+    public int getAttempts() {
+        return attempts;
     }
 
-    public void setAttempt(int attempt) {
-        this.attempt = attempt;
+    public void setAttempts(int attempts) {
+        this.attempts = attempts;
     }
 
     public int getIs_deleted() {

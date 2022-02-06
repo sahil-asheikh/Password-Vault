@@ -65,7 +65,7 @@
                                                         <tr>
                                                             <th class="beg-font-mplusrounded1c fw-bold">Social</th>
                                                             <th class="beg-font-mplusrounded1c fw-bold">Username</th>
-                                                            <th class="beg-font-mplusrounded1c fw-bold">Email</th>
+                                                            <!--<th class="beg-font-mplusrounded1c fw-bold">Email</th>-->
                                                             <th class="beg-font-mplusrounded1c fw-bold">Action</th>
                                                         </tr>
                                                     </thead>
@@ -73,7 +73,7 @@
                                                         <tr>
                                                             <td class="beg-font-segoeui">Instagram</td>
                                                             <td class="beg-font-segoeui">sahil_asheikh</td>
-                                                            <td class="beg-font-segoeui">sahil_asheikh@gmail.com</td>
+                                                            <!--<td class="beg-font-segoeui">sahil_asheikh@gmail.com</td>-->
                                                             <td class="beg-font-mplusrounded1c">
                                                                 <a href="#" class="badge badge-success d-block d-sm-none">Revel <i class="mdi mdi-arrow-right-bold"></i></a>
                                                                 <a href="#" class="badge badge-success d-none d-md-block d-xl-block">Revel <i class="mdi mdi-arrow-right-bold"></i></a>
