@@ -38,40 +38,6 @@
                 </button>
                 <!-- /Button to trigger save password modal -->
             </li>
-            <!--<li class="nav-item dropdown">
-                <a class="nav-link" id="profileDropdown" href="#" data-toggle="dropdown">
-                    <div class="navbar-profile">
-                        <img class="img-xs rounded-circle" src="assets/images/faces/face15.jpg" alt="profile-img">
-                        <p class="mb-0 d-none d-sm-block navbar-profile-name beg-font-mplusrounded1c">My-Name</p>
-                        <i class="mdi mdi-menu-down d-none d-sm-block"></i>
-                    </div>
-                </a>
-                <div class="dropdown-menu dropdown-menu-right navbar-dropdown preview-list" aria-labelledby="profileDropdown">
-                    <h6 class="p-3 mb-0">Profile</h6>
-                    <div class="dropdown-divider"></div>
-                    <a class="dropdown-item preview-item">
-                        <div class="preview-thumbnail">
-                            <div class="preview-icon bg-dark rounded-circle">
-                                <i class="mdi mdi-settings text-success"></i>
-                            </div>
-                        </div>
-                        <div class="preview-item-content">
-                            <p class="preview-subject mb-1 beg-font-mplusrounded1c">Settings</p>
-                        </div>
-                    </a>
-                    <div class="dropdown-divider"></div>
-                    <a class="dropdown-item preview-item">
-                        <div class="preview-thumbnail">
-                            <div class="preview-icon bg-dark rounded-circle">
-                                <i class="mdi mdi-logout text-danger"></i>
-                            </div>
-                        </div>
-                        <div class="preview-item-content">
-                            <p class="preview-subject mb-1 beg-font-mplusrounded1c">Log out</p>
-                        </div>
-                    </a>
-                </div>
-            </li>-->
         </ul>
         <!-- Button to trigger save password modal -->
         <button type="button" class="navbar-toggler navbar-toggler-right d-lg-none align-self-center beg-font-mplusrounded1c text-success" data-toggle="modal" data-target="#savePassword">
@@ -96,8 +62,8 @@
                     <span class="mdi mdi-close text-light"></span>
                 </button>
             </div>
-
-            <form class="modal-body">
+            <form class="modal-body" action="Passwords_controller" method="post">
+                <input type="hidden" name="action" value="addPassword">
                 <div class="form-group">
                     <label for="exampleInputUsername1">Password</label>
                     <input type="text" required class="form-control" placeholder="Password">
@@ -111,16 +77,8 @@
                     <input type="text" required class="form-control" placeholder="Enter your username">
                 </div>
                 <div class="form-group">
-                    <label for="exampleInputConfirmPassword1">Email</label>
-                    <input type="email" required class="form-control" placeholder="Enter your account email">
-                </div>
-                <div class="form-group">
                     <label for="exampleInputConfirmPassword1">App Name</label>
                     <input type="text" required class="form-control" placeholder="Enter app name">
-                </div>
-                <div class="form-group">
-                    <label for="exampleInputConfirmPassword1">App URL</label>
-                    <input type="url" required class="form-control" placeholder="Enter app url">
                 </div>
                 <button type="submit" class="btn btn-primary mr-2">Submit</button>
                 <button class="btn btn-dark" data-dismiss="modal">Cancel</button>

@@ -19,16 +19,16 @@ public class PasswordVault {
 
 //    Live database URL, username and password
 //    CLEARDB_DATABASE_URL ==> mysql://bd9304fc3e58f3:c78956e6@us-cdbr-east-05.cleardb.net/heroku_ad5e21ffb6191cc?reconnect=true
-//    private static final String DATABASE = "heroku_ad5e21ffb6191cc".toLowerCase();
-//    private static final String DB_URL = "jdbc:mysql://us-cdbr-east-05.cleardb.net/" + DATABASE;
-//    private static final String USER = "bd9304fc3e58f3";
-//    private static final String PASS = "c78956e6";
+    private static final String DATABASE = "heroku_ad5e21ffb6191cc".toLowerCase();
+    private static final String DB_URL = "jdbc:mysql://us-cdbr-east-05.cleardb.net/" + DATABASE;
+    private static final String USER = "bd9304fc3e58f3";
+    private static final String PASS = "c78956e6";
 //    =================================================================================
 //    Local database URL, username and password
-    private static final String DATABASE = PasswordVault.class.getSimpleName().toLowerCase();
-    private static final String DB_URL = "jdbc:mysql://localhost/" + DATABASE;
-    private static final String USER = "root";
-    private static final String PASS = "admin";
+//    private static final String DATABASE = PasswordVault.class.getSimpleName().toLowerCase();
+//    private static final String DB_URL = "jdbc:mysql://localhost/" + DATABASE;
+//    private static final String USER = "root";
+//    private static final String PASS = "admin";
 
     public static Connection connectDb() {
         Connection con = null;

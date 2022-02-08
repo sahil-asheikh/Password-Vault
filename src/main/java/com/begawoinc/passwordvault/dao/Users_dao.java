@@ -6,7 +6,7 @@
 package com.begawoinc.passwordvault.dao;
 
 import com.begawoinc.passwordvault.database.PasswordVault;
-import com.begawoinc.passwordvault.enums.PasswordResponseMessages;
+import com.begawoinc.passwordvault.enums.AuthResponseMessages;
 import com.begawoinc.passwordvault.model.Users;
 import java.sql.CallableStatement;
 import java.sql.Connection;
@@ -19,7 +19,7 @@ import java.sql.SQLException;
  */
 public class Users_dao {
 
-    Users quiz = new Users();
+    Users users = new Users();
     String message;
     int i;
     Connection con;
@@ -166,9 +166,9 @@ public class Users_dao {
             cs.setString(2, user.getUser_primary_key());
             i = cs.executeUpdate();
             if (i == 1) {
-                message = PasswordResponseMessages.PASSWORD_UPDATED.getPasswordResponseMessages();
+                message = AuthResponseMessages.USER_UPDATED.getAuthResponseMessage();
             } else {
-                message = PasswordResponseMessages.OPERATION_FAILED.getPasswordResponseMessages();
+                message = AuthResponseMessages.OPERATION_FAILED.getAuthResponseMessage();
             }
         } catch (SQLException e) {
             message = "com.begawoinc.passwordvault.dao.Users_dao.updatePassword()::" + e.getMessage();
@@ -195,17 +195,17 @@ public class Users_dao {
             cs.setString(4, user.getUser_email());
             i = cs.executeUpdate();
             if (i == 1) {
-                message = PasswordResponseMessages.PASSWORD_ADDED.getPasswordResponseMessages();
+                message = AuthResponseMessages.USER_ADDED.getAuthResponseMessage();
             }
         } catch (SQLException e) {
-            message = "com.begawoinc.passwordvault.dao.TblUser_dao.insert_user()::" + e.getMessage();
+            message = "com.begawoinc.passwordvault.dao.Users_dao.insert_user()::" + e.getMessage();
         } finally {
             try {
                 if (con != null) {
                     con.close();
                 }
             } catch (SQLException e) {
-                message = "com.begawoinc.passwordvault.dao.TblUser_dao.insert_user()::" + e.getMessage();
+                message = "com.begawoinc.passwordvault.dao.Users_dao.insert_user()::" + e.getMessage();
             }
         }
         return message;
