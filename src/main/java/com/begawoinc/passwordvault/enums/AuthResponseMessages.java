@@ -13,7 +13,11 @@ public enum AuthResponseMessages {
     LOGIN_SUCCESS("Loged in succesfully"),
     LOGIN_FAILED("Incorrect username or password"),
     USER_NOT_FOUND("User not found"),
-    BLOCKED_ACCOUNT("Your account is blocked because of multiple invalid attempts");
+    BLOCKED_ACCOUNT("Your account is blocked because of multiple invalid attempts"),
+    USER_ADDED("User added successfully!"),
+    USER_UPDATED("User updated successfully!"),
+    User_DELETED("User deleted successfully!"),
+    OPERATION_FAILED("Operation Failed");
 
     private String authResponsseMessage;
 

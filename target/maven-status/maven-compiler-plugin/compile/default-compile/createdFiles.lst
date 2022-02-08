@@ -1,8 +1,13 @@
+com\begawoinc\passwordvault\controllers\Passwords_controller.class
 com\begawoinc\passwordvault\dao\Users_dao.class
-com\begawoinc\passwordvault\enums\PasswordResponseMessages.class
+com\begawoinc\passwordvault\utility\Cipher.class
 com\begawoinc\passwordvault\database\PasswordVault.class
 com\begawoinc\passwordvault\enums\AuthResponseMessages.class
 com\begawoinc\passwordvault\service\Users_service.class
+com\begawoinc\passwordvault\dao\Passwords_dao.class
+com\begawoinc\passwordvault\controllers\Users_controller.class
+com\begawoinc\passwordvault\enums\PasswordResponseMessages.class
+com\begawoinc\passwordvault\model\Passwords.class
+com\begawoinc\passwordvault\service\Passwords_service.class
 com\begawoinc\passwordvault\model\Users.class
 com\begawoinc\passwordvault\utility\Utils.class
-com\begawoinc\passwordvault\controllers\Users_controller.class
