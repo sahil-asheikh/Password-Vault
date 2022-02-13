@@ -20,12 +20,14 @@ public class Passwords_service {
     Passwords_dao password_dao = new Passwords_dao();
 
     public String addPassword(Passwords password) {
+        this.password.setUser_primary_key(password.getUser_primary_key());
         this.password.setPassword(Cipher.encPass(password.getPassword(), password.getPassword_key()));
         this.password.setPassword_key(password.getPassword_key());
         this.password.setUsername(password.getUsername());
         this.password.setUser_email(password.getUser_email());
         this.password.setApp_name(password.getApp_name());
         this.password.setUrl(password.getUrl());
+        System.out.println("com.begawoinc.passwordvault.dao.Passwords_dao.addPassword()::" + this.password.getUrl());
         return password_dao.addPassword(this.password);
     }
 
@@ -44,7 +46,7 @@ public class Passwords_service {
     }
 
     public List<Passwords> findPasswordsByUserID(String user_primary_key) {
-        return password_dao.findPasswordsByID(user_primary_key);
+        return password_dao.findPasswordsByUserID(user_primary_key);
     }
 
 }

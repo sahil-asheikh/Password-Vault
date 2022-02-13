@@ -5,13 +5,14 @@
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8" errorPage="error-page.jsp"%>
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
         <!-- Required meta tags -->
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <title>Dashboard</title>
+        <title>Setting</title>
 
         <!-- plugins:css -->
         <link rel="stylesheet" href="assets/vendors/mdi/css/materialdesignicons.min.css">
@@ -36,7 +37,6 @@
         <!-- End layout styles -->
         <link rel="shortcut icon" href="assets/images/favicon.png" />
 
-
     </head>
     <body>
         <div class="container-scroller">
@@ -51,9 +51,55 @@
 
                     <!--Main content-->
                     <div class="content-wrapper">
+                        <div class="row">
+                            <div class="col-md-6 col-lg-6 col-xl-8">
+                                <div class="grid-margin stretch-card">
+                                    <div class="card">
+                                        <div class="card-body">
+                                            <h4 class="card-title">User Setting</h4>
+                                            <hr class="dropdown-divider">
+                                            <form class="forms-sample" action="Users_controller" method="post">
+                                                <input type="hidden" name="action" value="updateUser">
+                                                <input type="hidden" name="user_primary_key" value="<%= userNav.getUser_primary_key()%>">
 
-                        <h1>User Settings</h1>
-
+                                                <div class="form-group">
+                                                    <label for="exampleInputName1">Name</label>
+                                                    <input type="text" class="form-control" name="name" placeholder="Enter Your Name" value="<%= Utils.isEmpty(userNav.getName()) ? "" : userNav.getName()%>">
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="exampleInputEmail3">Email address</label>
+                                                    <input type="email" class="form-control" name="user_email" placeholder="Please Enter your Email" value="<%= Utils.isEmpty(userNav.getUser_email()) ? "" : userNav.getUser_email()%>">
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="exampleInputPassword4">Username</label>
+                                                    <div class="input-group">
+                                                        <div class="input-group-prepend">
+                                                            <span class="input-group-text">@</span>
+                                                        </div>
+                                                        <input type="text" class="form-control" name="username" placeholder="Please Enter your Username" value="<%= Utils.isEmpty(userNav.getUsername()) ? "" : userNav.getUsername()%>" aria-label="Username" aria-describedby="basic-addon1">
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="exampleInputPassword4">Password</label>
+                                                    <input type="text" class="form-control" name="password" placeholder="Please Enter your Password" value="<%= Utils.isEmpty(userNav.getPassword()) ? "" : userNav.getPassword()%>">
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="exampleSelectGender">Gender</label>
+                                                    <select class="form-control" name="gender">
+                                                        <option value="<%= Utils.isEmpty(userNav.getGender()) ? "" : userNav.getGender()%>" disabled selected><%= Utils.isEmpty(userNav.getGender()) ? "Please Select Your Gender" : userNav.getGender()%></option>
+                                                        <option value="Male">Male</option>
+                                                        <option value="Female">Female</option>
+                                                        <option value="Other">Other</option>
+                                                    </select>
+                                                </div>
+                                                <hr class="dropdown-divider my-3" >
+                                                <button type="submit" class="btn btn-primary mr-2">Update</button>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                     <!--/Main content-->
 

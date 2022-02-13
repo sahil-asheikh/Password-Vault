@@ -38,22 +38,6 @@
                 <span class="menu-title beg-font-mplusrounded1c">Dashboard</span>
             </a>
         </li>
-        <!--<li class="nav-item menu-items <%// pageName.equals("admin_dashboard") ? "active" : ""%>">
-            <a class="nav-link" data-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
-                <span class="menu-icon">
-                    <i class="mdi mdi-laptop"></i>
-                </span>
-                <span class="menu-title beg-font-mplusrounded1c">Basic UI Elements</span>
-                <i class="menu-arrow"></i>
-            </a>
-            <div class="collapse" id="ui-basic">
-                <ul class="nav flex-column sub-menu">
-                    <li class="nav-item beg-font-mplusrounded1c"> <a class="nav-link" href="pages/ui-features/buttons.html">Buttons</a></li>
-                    <li class="nav-item beg-font-mplusrounded1c"> <a class="nav-link" href="pages/ui-features/dropdowns.html">Dropdowns</a></li>
-                    <li class="nav-item beg-font-mplusrounded1c"> <a class="nav-link" href="pages/ui-features/typography.html">Typography</a></li>
-                </ul>
-            </div>
-        </li>-->
         <li class="nav-item menu-items <%= pageName.equals("profile") ? "active" : ""%>">
             <a class="nav-link" href="profile.jsp">
                 <span class="menu-icon">
@@ -78,5 +62,27 @@
                 <span class="menu-title beg-font-mplusrounded1c">Log out</span>
             </a>
         </li>
+        <!--<li class="nav-item menu-items">
+            <div role="separator" class="dropdown-divider"></div>
+        </li>
+        <li class="nav-item nav-category">
+            <span class="nav-link beg-font-segoeui">Extras</span>
+        </li>
+        <li class="nav-item menu-items <%= pageName.equals("terms-condition")%>">
+            <a class="nav-link" href="terms-condition.jsp">
+                <span class="menu-icon">
+                    <i class="mdi mdi-security"></i>
+                </span>
+                <span class="menu-title beg-font-mplusrounded1c">Privacy Policy</span>
+            </a>
+        </li>
+        <li class="nav-item menu-items <%= pageName.equals("about-us")%>">
+            <a class="nav-link" href="about-us.jsp">
+                <span class="menu-icon">
+                    <i class="mdi mdi-file-document-box"></i>
+                </span>
+                <span class="menu-title beg-font-mplusrounded1c">Abouts</span>
+            </a>
+        </li>-->
     </ul>
 </nav>

@@ -1,18 +1,17 @@
 <%-- 
-    Document   : error-page
-    Created on : 5 Feb, 2022, 9:12:00 PM
+    Document   : error-404
+    Created on : 9 Feb, 2022, 7:43:14 PM
     Author     : LENOVO
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<%@page isErrorPage="true" %>
 <!DOCTYPE html>
 <html lang="en">
     <head>
         <!-- Required meta tags -->
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <title>Error</title>
+        <title>404 Error</title>
 
         <!-- plugins:css -->
         <link rel="stylesheet" href="assets/vendors/mdi/css/materialdesignicons.min.css">
@@ -47,13 +46,11 @@
                         <div class="col-lg-7 mx-auto text-white">
                             <div class="row align-items-center d-flex flex-row">
                                 <div class="col-lg-6 text-lg-right pr-lg-4">
-                                    <!--<h1 class="display-1 mb-0">ERROR</h1>-->
-                                    <img class="img-fluid" src="assets/images/error-img.png" alt="error-img">
+                                    <h1 class="display-1 mb-0">404</h1>
                                 </div>
                                 <div class="col-lg-6 error-page-divider text-lg-left pl-lg-4 mt-4 mt-md-0 mt-lg-0 mt-xl-0">
                                     <h2>SORRY!</h2>
-                                    <!--<h3 class="font-weight-light">The page you’re looking for was not found.</h3>-->
-                                    <h3 class="font-weight-light"><%= exception%> error occurred!</h3>
+                                    <h3 class="font-weight-light">The page you’re looking for was not found.</h3>
                                 </div>
                             </div>
                             <div class="row mt-5">

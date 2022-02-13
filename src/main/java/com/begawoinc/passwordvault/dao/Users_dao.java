@@ -39,9 +39,11 @@ public class Users_dao {
                 user = new Users(
                         rs.getInt("id"),
                         rs.getString("user_primary_key"),
+                        rs.getString("name"),
                         rs.getString("username"),
                         rs.getString("password"),
                         rs.getString("user_email"),
+                        rs.getString("gender"),
                         rs.getInt("attempts"),
                         rs.getInt("is_deleted"),
                         rs.getString("created_at"),
@@ -196,6 +198,8 @@ public class Users_dao {
             i = cs.executeUpdate();
             if (i == 1) {
                 message = AuthResponseMessages.USER_ADDED.getAuthResponseMessage();
+            } else {
+                message = AuthResponseMessages.OPERATION_FAILED.getAuthResponseMessage();
             }
         } catch (SQLException e) {
             message = "com.begawoinc.passwordvault.dao.Users_dao.insert_user()::" + e.getMessage();
@@ -206,6 +210,73 @@ public class Users_dao {
                 }
             } catch (SQLException e) {
                 message = "com.begawoinc.passwordvault.dao.Users_dao.insert_user()::" + e.getMessage();
+            }
+        }
+        return message;
+    }
+
+    public Users findUserByUsername(String user_primary_key) {
+        Users user = null;
+        con = PasswordVault.connectDb();
+        sql = "SELECT * FROM " + TABLENAME + " where user_primary_key = '" + user_primary_key + "'";
+        try {
+            cs = con.prepareCall(sql);
+            rs = cs.executeQuery();
+            while (rs.next()) {
+                user = new Users(
+                        rs.getInt("id"),
+                        rs.getString("user_primary_key"),
+                        rs.getString("name"),
+                        rs.getString("username"),
+                        rs.getString("password"),
+                        rs.getString("user_email"),
+                        rs.getString("gender"),
+                        rs.getInt("attempts"),
+                        rs.getInt("is_deleted"),
+                        rs.getString("created_at"),
+                        rs.getString("modified_at")
+                );
+            }
+        } catch (SQLException e) {
+            message = "com.begawoinc.passwordvault.dao.Users_dao.select_user()::" + e.getMessage();
+        } finally {
+            try {
+                if (con != null) {
+                    con.close();
+                }
+            } catch (SQLException e) {
+                message = "com.begawoinc.passwordvault.dao.Users_dao.select_user()::" + e.getMessage();
+            }
+        }
+        return user;
+    }
+
+    public String update_user(Users user) {
+        con = PasswordVault.connectDb();
+        sql = "UPDATE " + TABLENAME + " set name = ?, username = ?, password = ?, user_email = ?, gender = ? WHERE user_primary_key = ?";
+        try {
+            cs = con.prepareCall(sql);
+            cs.setString(1, user.getName());
+            cs.setString(2, user.getUsername());
+            cs.setString(3, user.getPassword());
+            cs.setString(4, user.getUser_email());
+            cs.setString(5, user.getGender());
+            cs.setString(6, user.getUser_primary_key());
+            i = cs.executeUpdate();
+            if (i == 1) {
+                message = AuthResponseMessages.USER_UPDATED.getAuthResponseMessage();
+            } else {
+                message = AuthResponseMessages.OPERATION_FAILED.getAuthResponseMessage();
+            }
+        } catch (SQLException e) {
+            message = "com.begawoinc.passwordvault.dao.Users_dao.update_user()::" + e.getMessage();
+        } finally {
+            try {
+                if (con != null) {
+                    con.close();
+                }
+            } catch (SQLException e) {
+                message = "com.begawoinc.passwordvault.dao.Users_dao.update_user()::" + e.getMessage();
             }
         }
         return message;

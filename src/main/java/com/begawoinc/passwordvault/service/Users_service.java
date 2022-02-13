@@ -69,4 +69,12 @@ public class Users_service {
         return users_dao.insert_user(this.user);
     }
 
+    public Users findUserByUsername(String user_primary_key) {
+        return users_dao.findUserByUsername(user_primary_key);
+    }
+
+    public String update_user(Users user) {
+        return users_dao.update_user(user);
+    }
+
 }

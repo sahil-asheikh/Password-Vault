@@ -50,6 +50,8 @@ public class Users_controller extends HttpServlet {
                 break;
             case "logout":
                 logoutUser(request, response);
+            case "updateUser":
+                updateUser(request, response);
             default:
                 break;
         }
@@ -129,6 +131,22 @@ public class Users_controller extends HttpServlet {
         HttpSession session = request.getSession();
         session.invalidate();
         response.sendRedirect("login.jsp");
+    }
+
+    private void updateUser(HttpServletRequest request, HttpServletResponse response) throws IOException {
+        try {
+            user.setUser_primary_key(Utils.requiredNotNull(request.getParameter("user_primary_key"), "User Primary Key found empty"));
+            user.setUsername(Utils.requiredNotNull(request.getParameter("username"), "Username should not be empty"));
+            user.setName(Utils.requiredNotNull(request.getParameter("name"), "Name should not be empty"));
+            user.setUser_email(Utils.requiredNotNull(request.getParameter("user_email"), "Email should not be empty"));
+            user.setPassword(Utils.requiredNotNull(request.getParameter("password"), "Password should not be empty"));
+            user.setGender(Utils.requiredNotNull(request.getParameter("gender"), "Gender should not be empty"));
+            message = user_service.update_user(user);
+        } catch (Exception e) {
+            message = "com.begawoinc.passwordvault.controllers.User_controller.updateUser()" + e.getMessage();
+        } finally {
+            response.sendRedirect("profile.jsp?message=" + message);
+        }
     }
 
 }

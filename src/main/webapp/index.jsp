@@ -4,6 +4,9 @@
     Author     : LENOVO
 --%>
 
+<%@page import="com.begawoinc.passwordvault.service.Passwords_service"%>
+<%@page import="com.begawoinc.passwordvault.model.Passwords"%>
+<%@page import="java.util.List"%>
 <%@page contentType="text/html" pageEncoding="UTF-8" errorPage="error-page.jsp"%>
 <!DOCTYPE html>
 <html lang="en">
@@ -48,7 +51,9 @@
                 <%@include file="navbar.jsp" %>
                 <!--/Nav bar-->
                 <div class="main-panel">
-
+                    <%                        Passwords_service passwords_service = new Passwords_service();
+                        List<Passwords> passwords = passwords_service.findPasswordsByUserID(user_primary_key);
+                    %>
                     <!--Main content-->
                     <div class="content-wrapper">
 
@@ -65,20 +70,26 @@
                                                         <tr>
                                                             <th class="beg-font-mplusrounded1c fw-bold">Social</th>
                                                             <th class="beg-font-mplusrounded1c fw-bold">Username</th>
-                                                            <!--<th class="beg-font-mplusrounded1c fw-bold">Email</th>-->
                                                             <th class="beg-font-mplusrounded1c fw-bold">Action</th>
                                                         </tr>
                                                     </thead>
                                                     <tbody>
+                                                        <%
+                                                            for (Passwords password : passwords) {
+                                                        %>
                                                         <tr>
-                                                            <td class="beg-font-segoeui">Instagram</td>
-                                                            <td class="beg-font-segoeui">sahil_asheikh</td>
-                                                            <!--<td class="beg-font-segoeui">sahil_asheikh@gmail.com</td>-->
+                                                            <td class="beg-font-segoeui"><%= Utils.isEmpty(password.getApp_name()) ? "Not-Given" : password.getApp_name()%></td>
+                                                            <td class="beg-font-segoeui"><%= Utils.isEmpty(password.getUsername()) ? "Not-Given" : password.getUsername()%></td>
                                                             <td class="beg-font-mplusrounded1c">
-                                                                <a href="#" class="badge badge-success d-block d-sm-none">Revel <i class="mdi mdi-arrow-right-bold"></i></a>
+                                                                <!--for mobile screens-->
+                                                                <a href="#" class="badge badge-success d-block d-sm-none"><i class="mdi mdi-eye"></i></a>
+                                                                <!--for large screen-->
                                                                 <a href="#" class="badge badge-success d-none d-md-block d-xl-block">Revel <i class="mdi mdi-arrow-right-bold"></i></a>
                                                             </td>
-                                                        </tr>
+                                                        </tr>                                                                
+                                                        <%
+                                                            }
+                                                        %>
                                                     </tbody>
                                                 </table>
                                             </div>
@@ -87,49 +98,51 @@
                                 </div>
                             </div>
                             <div class="col-md-5 col-xl-5 d-none d-md-block d-xl-block">
-                                <div class="grid-margin stretch-card">
-                                    <div class="card">
-                                        <div class="card-body">
-                                            <h4 class="card-title">Password</h4>
-                                            <div class="d-none d-md-block d-xl-block mt-2 my-md-3 my-xl-3 text-center">
-                                                <img class="img-fluid bg-light rounded-circle p-3 w-25" src="assets/images/favicon.png">
-                                            </div>
-                                            <div class="bg-gray-dark d-flex d-md-block d-xl-flex flex-row py-3 px-4 px-md-3 px-xl-4 rounded mt-3">
-                                                <div class="text-md-center text-xl-left">
-                                                    <h6 class="mb-1">Instagram</h6>
-                                                    <p class="text-muted mb-0">instagram.com</p>
+                                <div class="revel-password" id="revel-password">
+                                    <div class="grid-margin stretch-card">
+                                        <div class="card">
+                                            <div class="card-body">
+                                                <h4 class="card-title">Password</h4>
+                                                <div class="d-none d-md-block d-xl-block mt-2 my-md-3 my-xl-3 text-center">
+                                                    <img class="img-fluid bg-light rounded-circle p-3 w-25" src="assets/images/favicon.png">
+                                                </div>
+                                                <div class="bg-gray-dark d-flex d-md-block d-xl-flex flex-row py-3 px-4 px-md-3 px-xl-4 rounded mt-3">
+                                                    <div class="text-md-center text-xl-left">
+                                                        <h6 class="mb-1">Instagram</h6>
+                                                        <p class="text-muted mb-0">instagram.com</p>
+                                                    </div>
+                                                </div>
+                                                <div class="bg-gray-dark d-flex d-md-block d-xl-flex flex-row py-3 px-4 px-md-3 px-xl-4 rounded mt-3">
+                                                    <div class="text-md-center text-xl-left">
+                                                        <h6 class="mb-1">Username</h6>
+                                                        <p class="text-muted mb-0">username</p>
+                                                    </div>
+                                                </div>
+                                                <div class="bg-gray-dark d-flex d-md-block d-xl-flex flex-row py-3 px-4 px-md-3 px-xl-4 rounded mt-3">
+                                                    <div class="text-md-center text-xl-left">
+                                                        <h6 class="mb-1">Email</h6>
+                                                        <p class="text-muted mb-0">username@gmail.com</p>
+                                                    </div>
+                                                </div>
+                                                <div class="bg-gray-dark d-flex d-md-block d-xl-flex flex-row py-3 px-4 px-md-3 px-xl-4 rounded mt-3">
+                                                    <div class="text-md-center text-xl-left">
+                                                        <h6 class="mb-1">Password</h6>
+                                                        <p class="text-muted mb-0">my password</p>
+                                                    </div>
                                                 </div>
                                             </div>
-                                            <div class="bg-gray-dark d-flex d-md-block d-xl-flex flex-row py-3 px-4 px-md-3 px-xl-4 rounded mt-3">
-                                                <div class="text-md-center text-xl-left">
-                                                    <h6 class="mb-1">Username</h6>
-                                                    <p class="text-muted mb-0">username</p>
-                                                </div>
-                                            </div>
-                                            <div class="bg-gray-dark d-flex d-md-block d-xl-flex flex-row py-3 px-4 px-md-3 px-xl-4 rounded mt-3">
-                                                <div class="text-md-center text-xl-left">
-                                                    <h6 class="mb-1">Email</h6>
-                                                    <p class="text-muted mb-0">username@gmail.com</p>
-                                                </div>
-                                            </div>
-                                            <div class="bg-gray-dark d-flex d-md-block d-xl-flex flex-row py-3 px-4 px-md-3 px-xl-4 rounded mt-3">
-                                                <div class="text-md-center text-xl-left">
-                                                    <h6 class="mb-1">Password</h6>
-                                                    <p class="text-muted mb-0">my password</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="card-footer">
-                                            <div class="row">
-                                                <div class="col-6">
-                                                    <a href="#" class="my-2 w-100 badge badge-primary">
-                                                        Update <i class="mdi mdi-update"></i>
-                                                    </a>
-                                                </div>
-                                                <div class="col-6">
-                                                    <a href="#" class="mt-2 w-100 badge badge-danger">
-                                                        Delete <i class="mdi mdi-delete"></i>
-                                                    </a>
+                                            <div class="card-footer">
+                                                <div class="row">
+                                                    <div class="col-6">
+                                                        <a href="#" class="my-2 w-100 badge badge-primary">
+                                                            Update <i class="mdi mdi-update"></i>
+                                                        </a>
+                                                    </div>
+                                                    <div class="col-6">
+                                                        <a href="#" class="mt-2 w-100 badge badge-danger">
+                                                            Delete <i class="mdi mdi-delete"></i>
+                                                        </a>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>

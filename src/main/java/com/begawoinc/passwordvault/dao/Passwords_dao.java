@@ -6,10 +6,8 @@
 package com.begawoinc.passwordvault.dao;
 
 import com.begawoinc.passwordvault.database.PasswordVault;
-import com.begawoinc.passwordvault.enums.AuthResponseMessages;
 import com.begawoinc.passwordvault.enums.PasswordResponseMessages;
 import com.begawoinc.passwordvault.model.Passwords;
-import com.begawoinc.passwordvault.model.Users;
 import com.begawoinc.passwordvault.utility.Utils;
 import java.sql.CallableStatement;
 import java.sql.Connection;
@@ -49,6 +47,8 @@ public class Passwords_dao {
             i = cs.executeUpdate();
             if (i == 1) {
                 message = PasswordResponseMessages.PASSWORD_ADDED.getPasswordResponseMessages();
+            } else {
+                message = PasswordResponseMessages.OPERATION_FAILED.getPasswordResponseMessages();
             }
         } catch (SQLException e) {
             message = "com.begawoinc.passwordvault.dao.Passwords_dao.addPassword()::" + e.getMessage();
@@ -122,7 +122,7 @@ public class Passwords_dao {
         return message;
     }
 
-    public List<Passwords> findPasswordsByID(String user_primary_key) {
+    public List<Passwords> findPasswordsByUserID(String user_primary_key) {
         ArrayList<Passwords> passwords = new ArrayList<>();
 
         con = PasswordVault.connectDb();

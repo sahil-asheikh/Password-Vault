@@ -13,20 +13,24 @@ public class Users {
 
     private int id;
     private String user_primary_key;
+    private String name;
     private String username;
     private String password;
     private String user_email;
+    private String gender;
     private int attempts;
     private int is_deleted;
     private String created_at;
     private String modified_at;
 
-    public Users(int id, String user_primary_key, String username, String password, String user_email, int attempts, int is_deleted, String created_at, String modified_at) {
+    public Users(int id, String user_primary_key, String name, String username, String password, String user_email, String gender, int attempts, int is_deleted, String created_at, String modified_at) {
         this.id = id;
         this.user_primary_key = user_primary_key;
+        this.name = name;
         this.username = username;
         this.password = password;
         this.user_email = user_email;
+        this.gender = gender;
         this.attempts = attempts;
         this.is_deleted = is_deleted;
         this.created_at = created_at;
@@ -52,6 +56,14 @@ public class Users {
         this.user_primary_key = user_primary_key;
     }
 
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
     public String getUsername() {
         return username;
     }
@@ -74,6 +86,14 @@ public class Users {
 
     public void setUser_email(String user_email) {
         this.user_email = user_email;
+    }
+
+    public String getGender() {
+        return gender;
+    }
+
+    public void setGender(String gender) {
+        this.gender = gender;
     }
 
     public int getAttempts() {

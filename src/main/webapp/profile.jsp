@@ -11,7 +11,7 @@
         <!-- Required meta tags -->
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <title>Dashboard</title>
+        <title>Profile</title>
 
         <!-- plugins:css -->
         <link rel="stylesheet" href="assets/vendors/mdi/css/materialdesignicons.min.css">
@@ -51,9 +51,31 @@
 
                     <!--Main content-->
                     <div class="content-wrapper">
-
-                        <h1>User Profile</h1>
-
+                        <div class="row">
+                            <div class="col-md-6 col-lg-6 col-xl-8">
+                                <div class="grid-margin stretch-card">
+                                    <div class="card">
+                                        <div class="card-body">
+                                            <h4 class="card-title">User Profile</h4>
+                                            <hr class="dropdown-divider">
+                                            <br>
+                                            <div class="form-group">
+                                                <h5 type="text" class=""> <%= Utils.isEmpty(userNav.getName()) ? "Update Profile to save your name" : "Name: " + userNav.getName()%></h5>
+                                            </div>
+                                            <div class="form-group">
+                                                <h5 type="text" class=""> <%= Utils.isEmpty(userNav.getUser_email()) ? "Update Profile to save your email" : "Email: " + userNav.getUser_email()%></h5>
+                                            </div>
+                                            <div class="form-group">
+                                                <h5 type="text" class=""> <%= Utils.isEmpty(userNav.getUsername()) ? "Update Profile to save your username" : "Username: @" + userNav.getUsername()%></h5>
+                                            </div>
+                                            <div class="form-group">
+                                                <h5 type="text" class=""> <%= Utils.isEmpty(userNav.getGender()) ? "Update Profile to save your gender" : "Gender: " + userNav.getGender()%></h5>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                     <!--/Main content-->
 

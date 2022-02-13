@@ -1,18 +1,17 @@
 <%-- 
-    Document   : error-page
-    Created on : 5 Feb, 2022, 9:12:00 PM
+    Document   : about-us
+    Created on : 10 Feb, 2022, 1:02:28 PM
     Author     : LENOVO
 --%>
 
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
-<%@page isErrorPage="true" %>
+<%@page contentType="text/html" pageEncoding="UTF-8" errorPage="error-page.jsp"%>
 <!DOCTYPE html>
 <html lang="en">
     <head>
         <!-- Required meta tags -->
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <title>Error</title>
+        <title>About us</title>
 
         <!-- plugins:css -->
         <link rel="stylesheet" href="assets/vendors/mdi/css/materialdesignicons.min.css">
@@ -41,35 +40,28 @@
     </head>
     <body>
         <div class="container-scroller">
-            <div class="container-fluid page-body-wrapper full-page-wrapper">
-                <div class="content-wrapper d-flex align-items-center text-center error-page bg-primary">
-                    <div class="row flex-grow">
-                        <div class="col-lg-7 mx-auto text-white">
-                            <div class="row align-items-center d-flex flex-row">
-                                <div class="col-lg-6 text-lg-right pr-lg-4">
-                                    <!--<h1 class="display-1 mb-0">ERROR</h1>-->
-                                    <img class="img-fluid" src="assets/images/error-img.png" alt="error-img">
-                                </div>
-                                <div class="col-lg-6 error-page-divider text-lg-left pl-lg-4 mt-4 mt-md-0 mt-lg-0 mt-xl-0">
-                                    <h2>SORRY!</h2>
-                                    <!--<h3 class="font-weight-light">The page you’re looking for was not found.</h3>-->
-                                    <h3 class="font-weight-light"><%= exception%> error occurred!</h3>
-                                </div>
-                            </div>
-                            <div class="row mt-5">
-                                <div class="col-12 text-center mt-xl-2">
-                                    <a class="text-white font-weight-medium" href="index.jsp">Back to home</a>
-                                </div>
-                            </div>
-                            <div class="row mt-5">
-                                <div class="col-12 mt-xl-2">
-                                    <p class="text-white font-weight-medium text-center">Copyright &copy; 2022 All rights reserved.</p>
-                                </div>
-                            </div>
-                        </div>
+            <!--Side bar-->
+            <%@include file="sidebar.jsp" %>
+            <!--/Side bar-->
+            <div class="container-fluid page-body-wrapper">
+                <!--Nav bar-->
+                <%@include file="navbar.jsp" %>
+                <!--/Nav bar-->
+                <div class="main-panel">
+
+                    <!--Main content-->
+                    <div class="content-wrapper">
+
+                        <h1>About us</h1>
+
                     </div>
+                    <!--/Main content-->
+
+                    <!--Footer-->
+                    <%@include file="footer.jsp" %>
+                    <!--/Footer-->
                 </div>
-                <!-- content-wrapper ends -->
+                <!-- main-panel ends -->
             </div>
             <!-- page-body-wrapper ends -->
         </div>

@@ -5,15 +5,11 @@
  */
 package com.begawoinc.passwordvault.controllers;
 
-import com.begawoinc.passwordvault.enums.AuthResponseMessages;
 import com.begawoinc.passwordvault.enums.PasswordResponseMessages;
 import com.begawoinc.passwordvault.model.Passwords;
-import com.begawoinc.passwordvault.model.Users;
 import com.begawoinc.passwordvault.service.Passwords_service;
-import com.begawoinc.passwordvault.service.Users_service;
 import com.begawoinc.passwordvault.utility.Utils;
 import java.io.IOException;
-import java.io.PrintWriter;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -100,13 +96,13 @@ public class Passwords_controller extends HttpServlet {
     private void addPassword(HttpServletRequest request, HttpServletResponse response) throws IOException {
 
         try {
+            password.setUser_primary_key(Utils.requiredNotNull(request.getParameter("user_primary_key"), "Didn't find user primary key"));
             password.setPassword(Utils.requiredNotNull(request.getParameter("password"), "Password should not be empty"));
-            password.setPassword_key(Utils.requiredNotNull(Integer.parseInt(request.getParameter("password_key")), "Password Key should not be empty"));
+            password.setPassword_key(Utils.requiredNotNull(Integer.parseInt(request.getParameter("password_key")), "Didn't find password key"));
             password.setUsername(Utils.requiredNotNull(request.getParameter("username"), "Username should not be empty"));
-            password.setUser_email(Utils.requiredNotNull(request.getParameter("user_email"), "User Email should not be empty"));
+            password.setUser_email(Utils.requiredNotNull(request.getParameter("user_email"), "Didn't find user email"));
             password.setApp_name(Utils.requiredNotNull(request.getParameter("app_name"), "App Name should not be empty"));
-            password.setUrl(Utils.requiredNotNull(request.getParameter("url"), "URL should not be empty"));
-
+            password.setUrl(request.getParameter("app_name").toLowerCase() + ".com/");
             message = password_service.addPassword(password);
         } catch (NumberFormatException e) {
             message = "com.begawoinc.passwordvault.controllers.Passwords_controller.addPassword()" + e.getMessage();
@@ -130,7 +126,6 @@ public class Passwords_controller extends HttpServlet {
             password.setUser_email(Utils.requiredNotNull(request.getParameter("user_email"), "User Email should not be empty"));
             password.setApp_name(Utils.requiredNotNull(request.getParameter("app_name"), "App Name should not be empty"));
             password.setUrl(Utils.requiredNotNull(request.getParameter("url"), "URL should not be empty"));
-
             message = password_service.updatePassword(password);
         } catch (NumberFormatException e) {
             message = "com.begawoinc.passwordvault.controllers.Passwords_controller.updatePassword()" + e.getMessage();
