@@ -1,5 +1,107 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <web-app version="3.1" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd">
+    
+    <servlet>
+        <servlet-name>Dashboard</servlet-name>
+        <jsp-file>/index.jsp</jsp-file>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Dashboard</servlet-name>
+        <url-pattern>/dashboard</url-pattern>
+        <url-pattern>/index</url-pattern>
+    </servlet-mapping>
+    
+    <servlet>
+        <servlet-name>Login</servlet-name>
+        <jsp-file>/login.jsp</jsp-file>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Login</servlet-name>
+        <url-pattern>/login</url-pattern>
+    </servlet-mapping>
+    
+    <servlet>
+        <servlet-name>Profile</servlet-name>
+        <jsp-file>/profile.jsp</jsp-file>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Profile</servlet-name>
+        <url-pattern>/profile</url-pattern>
+    </servlet-mapping>
+    
+    <servlet>
+        <servlet-name>Settings</servlet-name>
+        <jsp-file>/settings.jsp</jsp-file>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Settings</servlet-name>
+        <url-pattern>/settings</url-pattern>
+    </servlet-mapping>
+    
+    <servlet>
+        <servlet-name>Signup</servlet-name>
+        <jsp-file>/signup.jsp</jsp-file>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Signup</servlet-name>
+        <url-pattern>/signup</url-pattern>
+        <url-pattern>/register</url-pattern>
+    </servlet-mapping>
+    
+    <servlet>
+        <servlet-name>TermsCondition</servlet-name>
+        <jsp-file>/terms-condition.jsp</jsp-file>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>TermsCondition</servlet-name>
+        <url-pattern>/terms-condition</url-pattern>
+    </servlet-mapping>
+    
+    <servlet>
+        <servlet-name>ViewPassword</servlet-name>
+        <jsp-file>/view-password.jsp</jsp-file>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ViewPassword</servlet-name>
+        <url-pattern>/view-password</url-pattern>
+    </servlet-mapping>
+    
+    <servlet>
+        <servlet-name>PasswordDetails</servlet-name>
+        <jsp-file>/password-details.jsp</jsp-file>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>PasswordDetails</servlet-name>
+        <url-pattern>/password-details</url-pattern>
+    </servlet-mapping>
+    
+    <servlet>
+        <servlet-name>AboutUs</servlet-name>
+        <jsp-file>/about-us.jsp</jsp-file>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>AboutUs</servlet-name>
+        <url-pattern>/about-us</url-pattern>
+    </servlet-mapping>
+    
+    <servlet>
+        <servlet-name>ErrorPage404</servlet-name>
+        <jsp-file>/error-page-404.jsp</jsp-file>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ErrorPage404</servlet-name>
+        <url-pattern>/error-page-404</url-pattern>
+    </servlet-mapping>
+    
+    <servlet>
+        <servlet-name>ErrorPage</servlet-name>
+        <jsp-file>/error-page.jsp</jsp-file>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ErrorPage</servlet-name>
+        <url-pattern>/error-page</url-pattern>
+    </servlet-mapping>
+    
     <servlet>
         <servlet-name>NewServlet</servlet-name>
         <servlet-class>NewServlet</servlet-class>

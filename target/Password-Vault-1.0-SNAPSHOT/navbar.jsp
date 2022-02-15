@@ -10,7 +10,7 @@
 <%
     String user_primary_key = String.valueOf(session.getAttribute("user_primary_key"));
     if (Utils.isEmpty(user_primary_key)) {
-        response.sendRedirect("login.jsp?msg=Login Frist");
+        response.sendRedirect("login?msg=Login Frist");
     }
 
     Users_service users_serviceNav = new Users_service();
@@ -20,7 +20,7 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <nav class="navbar p-0 fixed-top d-flex flex-row">
     <div class="navbar-brand-wrapper d-flex d-lg-none align-items-center justify-content-center">
-        <a class="navbar-brand brand-logo-mini beg-font-mplusrounded1c" href="index.html">
+        <a class="navbar-brand brand-logo-mini beg-font-mplusrounded1c" href="dashboard">
             <!--<img src="assets/images/favicon.png" alt="logo" />-->
             <span class="text-light  beg-font-mplusrounded1c">Password Vault</span>
         </a>

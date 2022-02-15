@@ -17,11 +17,11 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <nav class="sidebar sidebar-offcanvas" id="sidebar">
     <div class="sidebar-brand-wrapper d-none d-lg-flex align-items-center justify-content-center fixed-top">
-        <a class="sidebar-brand brand-logo" href="index.html">
+        <a class="sidebar-brand brand-logo" href="dashboard">
             <!--<img src="assets/images/logo.svg" alt="logo" />-->
             <span class="text-light beg-font-mplusrounded1c">Password Vault</span>
         </a>
-        <a class="sidebar-brand brand-logo-mini" href="index.html">
+        <a class="sidebar-brand brand-logo-mini" href="dashboard">
             <!--<img src="assets/images/logo-mini.svg" alt="logo" />-->
             <span class="text-light beg-font-mplusrounded1c">Password Vault</span>
         </a>
@@ -30,8 +30,8 @@
         <li class="nav-item nav-category">
             <span class="nav-link beg-font-segoeui">Navigation</span>
         </li>
-        <li class="nav-item menu-items <%= pageName.equals("index") ? "active" : ""%>">
-            <a class="nav-link" href="index.jsp">
+        <li class="nav-item menu-items <%= pageName.equals("index") || pageName.equals("dashboard") ? "active" : ""%>">
+            <a class="nav-link" href="dashboard">
                 <span class="menu-icon">
                     <i class="mdi mdi-speedometer"></i>
                 </span>
@@ -39,7 +39,7 @@
             </a>
         </li>
         <li class="nav-item menu-items <%= pageName.equals("profile") ? "active" : ""%>">
-            <a class="nav-link" href="profile.jsp">
+            <a class="nav-link" href="profile">
                 <span class="menu-icon">
                     <i class="mdi mdi-account"></i>
                 </span>
@@ -47,7 +47,7 @@
             </a>
         </li>
         <li class="nav-item menu-items <%= pageName.equals("settings") ? "active" : ""%>">
-            <a class="nav-link" href="settings.jsp">
+            <a class="nav-link" href="settings">
                 <span class="menu-icon">
                     <i class="mdi mdi-settings"></i>
                 </span>
@@ -69,7 +69,7 @@
             <span class="nav-link beg-font-segoeui">Extras</span>
         </li>
         <li class="nav-item menu-items <%= pageName.equals("terms-condition")%>">
-            <a class="nav-link" href="terms-condition.jsp">
+            <a class="nav-link" href="terms-condition">
                 <span class="menu-icon">
                     <i class="mdi mdi-security"></i>
                 </span>
@@ -77,7 +77,7 @@
             </a>
         </li>
         <li class="nav-item menu-items <%= pageName.equals("about-us")%>">
-            <a class="nav-link" href="about-us.jsp">
+            <a class="nav-link" href="about-us">
                 <span class="menu-icon">
                     <i class="mdi mdi-file-document-box"></i>
                 </span>

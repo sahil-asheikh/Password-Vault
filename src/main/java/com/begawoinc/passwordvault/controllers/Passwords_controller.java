@@ -108,16 +108,15 @@ public class Passwords_controller extends HttpServlet {
             message = "com.begawoinc.passwordvault.controllers.Passwords_controller.addPassword()" + e.getMessage();
         } finally {
             if (message.equals(PasswordResponseMessages.PASSWORD_ADDED.getPasswordResponseMessages())) {
-                response.sendRedirect("index.jsp?message=" + message);
+                response.sendRedirect("dashboard?message=" + message);
             } else {
-                response.sendRedirect("index.jsp?message=" + message);
+                response.sendRedirect("dashboard?message=" + message);
             }
         }
 
     }
 
     private void updatePassword(HttpServletRequest request, HttpServletResponse response) throws IOException {
-
         try {
             password.setPassword_primary_key(Utils.requiredNotNull(request.getParameter("password_primary_key"), "Password Primary Key should not be empty"));
             password.setPassword(Utils.requiredNotNull(request.getParameter("password"), "Password should not be empty"));
@@ -130,13 +129,8 @@ public class Passwords_controller extends HttpServlet {
         } catch (NumberFormatException e) {
             message = "com.begawoinc.passwordvault.controllers.Passwords_controller.updatePassword()" + e.getMessage();
         } finally {
-            if (message.equals(PasswordResponseMessages.PASSWORD_UPDATED.getPasswordResponseMessages())) {
-                response.sendRedirect("index.jsp?message=" + message);
-            } else {
-                response.sendRedirect("index.jsp?message=" + message);
-            }
+            response.sendRedirect("dashboard?message=" + message);
         }
-
     }
 
     private void deletePassword(HttpServletRequest request, HttpServletResponse response) throws IOException {
@@ -146,11 +140,7 @@ public class Passwords_controller extends HttpServlet {
         } catch (NumberFormatException e) {
             message = "com.begawoinc.passwordvault.controllers.Passwords_controller.deletePassword()" + e.getMessage();
         } finally {
-            if (message.equals(PasswordResponseMessages.PASSWORD_DELETED.getPasswordResponseMessages())) {
-                response.sendRedirect("index.jsp?message=" + message);
-            } else {
-                response.sendRedirect("index.jsp?message=" + message);
-            }
+            response.sendRedirect("dashboard?message=" + message);
         }
     }
 

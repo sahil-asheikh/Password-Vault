@@ -22,7 +22,6 @@ import java.util.List;
  */
 public class Passwords_dao {
 
-    Passwords password = new Passwords();
     String message;
     int i;
     Connection con;
@@ -66,6 +65,9 @@ public class Passwords_dao {
 
     public String updatePassword(Passwords password) {
         con = PasswordVault.connectDb();
+        /*
+        UPDATE `passwordvault`.`users` SET `username` = 'begawo', `user_email` = 'begawo@rediffmail.com' WHERE (`id` = '1');
+         */
         sql = "UPDATE " + TABLENAME + " set password = ?, password_key = ?, username = ?, user_email = ?, app_name = ?, url = ? WHERE password_primary_key = ?";
         try {
             cs = con.prepareCall(sql);
@@ -156,6 +158,41 @@ public class Passwords_dao {
             }
         }
         return passwords;
+    }
+
+    public Passwords findPasswordByPasswordID(String password_primary_key) {
+        Passwords password = null;
+        con = PasswordVault.connectDb();
+        sql = "SELECT * FROM " + TABLENAME + " where password_primary_key = '" + password_primary_key + "'";
+        try {
+            cs = con.prepareCall(sql);
+            rs = cs.executeQuery();
+            if (rs.next()) {
+                password = new Passwords(
+                        rs.getString("password_primary_key"),
+                        rs.getString("user_primary_key"),
+                        rs.getString("password"),
+                        rs.getInt("password_key"),
+                        rs.getString("username"),
+                        rs.getString("user_email"),
+                        rs.getString("app_name"),
+                        rs.getString("url"),
+                        rs.getString("created_at"),
+                        rs.getString("modified_at")
+                );
+            }
+        } catch (SQLException e) {
+            message = "com.begawoinc.passwordvault.dao.Passwords_dao.findPasswordByPasswordID::" + e.getMessage();
+        } finally {
+            try {
+                if (con != null) {
+                    con.close();
+                }
+            } catch (SQLException e) {
+                message = "com.begawoinc.passwordvault.dao.Passwords_dao.findPasswordByPasswordID::" + e.getMessage();
+            }
+        }
+        return password;
     }
 
 }

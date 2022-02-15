@@ -73,8 +73,8 @@
                                                     <button class="btn btn-google col">
                                                         <i class="mdi mdi-google-plus"></i> Google plus </button>
                                                 </div>-->
-                                                <p class="sign-up text-center">Already have an Account?<a href="login.jsp"> Login</a></p>
-                                                <p class="terms">By creating an account you are accepting our<a href="terms-condition.jsp"> Terms & Conditions</a></p>
+                                                <p class="sign-up text-center">Already have an Account?<a href="login"> Login</a></p>
+                                                <p class="terms">By creating an account you are accepting our<a href="terms-condition"> Terms & Conditions</a></p>
                                             </form>
                                         </div>
                                     </div>

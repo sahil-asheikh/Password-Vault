@@ -38,6 +38,7 @@ public class Passwords_service {
         this.password.setUser_email(password.getUser_email());
         this.password.setApp_name(password.getApp_name());
         this.password.setUrl(password.getUrl());
+        this.password.setPassword_primary_key(password.getPassword_primary_key());
         return password_dao.updatePassword(this.password);
     }
 
@@ -47,6 +48,10 @@ public class Passwords_service {
 
     public List<Passwords> findPasswordsByUserID(String user_primary_key) {
         return password_dao.findPasswordsByUserID(user_primary_key);
+    }
+
+    public Passwords findPasswordByPasswordID(String password_primary_key) {
+        return password_dao.findPasswordByPasswordID(password_primary_key);
     }
 
 }

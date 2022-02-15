@@ -33,6 +33,20 @@
                 font-family: 'Segoe UI', sans-serif;
             }
         </style>
+        <!--AJAX Script to view password details dynamically-->
+        <script>
+            function viewPassword(password_primary_key) {
+                var xhttp = new XMLHttpRequest();
+                xhttp.onreadystatechange = function () {
+                    if (this.readyState === 4 && this.status === 200) {
+                        document.getElementById("revel-password").innerHTML =
+                                this.responseText;
+                    }
+                };
+                xhttp.open("GET", "view-password.jsp?password_primary_key=" + password_primary_key, true);
+                xhttp.send();
+            }
+        </script>
 
         <!-- Layout styles -->
         <link rel="stylesheet" href="assets/css/style.css">
@@ -82,9 +96,9 @@
                                                             <td class="beg-font-segoeui"><%= Utils.isEmpty(password.getUsername()) ? "Not-Given" : password.getUsername()%></td>
                                                             <td class="beg-font-mplusrounded1c">
                                                                 <!--for mobile screens-->
-                                                                <a href="#" class="badge badge-success d-block d-sm-none"><i class="mdi mdi-eye"></i></a>
+                                                                <a href="password-details?password_primary_key=<%= Utils.isEmpty(password.getPassword_primary_key()) ? "" : password.getPassword_primary_key()%>" class="badge badge-success d-block d-sm-none"><i class="mdi mdi-eye"></i></a>
                                                                 <!--for large screen-->
-                                                                <a href="#" class="badge badge-success d-none d-md-block d-xl-block">Revel <i class="mdi mdi-arrow-right-bold"></i></a>
+                                                                <a href="#" onclick="viewPassword('<%= Utils.isEmpty(password.getPassword_primary_key()) ? "" : password.getPassword_primary_key()%>')" class="badge badge-success d-none d-md-block d-xl-block">Revel <i class="mdi mdi-arrow-right-bold"></i></a>
                                                             </td>
                                                         </tr>                                                                
                                                         <%
@@ -100,49 +114,29 @@
                             <div class="col-md-5 col-xl-5 d-none d-md-block d-xl-block">
                                 <div class="revel-password" id="revel-password">
                                     <div class="grid-margin stretch-card">
-                                        <div class="card">
+                                        <!--for large screens-->
+                                        <div class="card d-none d-md-block d-lg-block d-xl-block">
                                             <div class="card-body">
-                                                <h4 class="card-title">Password</h4>
                                                 <div class="d-none d-md-block d-xl-block mt-2 my-md-3 my-xl-3 text-center">
                                                     <img class="img-fluid bg-light rounded-circle p-3 w-25" src="assets/images/favicon.png">
                                                 </div>
-                                                <div class="bg-gray-dark d-flex d-md-block d-xl-flex flex-row py-3 px-4 px-md-3 px-xl-4 rounded mt-3">
-                                                    <div class="text-md-center text-xl-left">
-                                                        <h6 class="mb-1">Instagram</h6>
-                                                        <p class="text-muted mb-0">instagram.com</p>
-                                                    </div>
-                                                </div>
-                                                <div class="bg-gray-dark d-flex d-md-block d-xl-flex flex-row py-3 px-4 px-md-3 px-xl-4 rounded mt-3">
-                                                    <div class="text-md-center text-xl-left">
-                                                        <h6 class="mb-1">Username</h6>
-                                                        <p class="text-muted mb-0">username</p>
-                                                    </div>
-                                                </div>
-                                                <div class="bg-gray-dark d-flex d-md-block d-xl-flex flex-row py-3 px-4 px-md-3 px-xl-4 rounded mt-3">
-                                                    <div class="text-md-center text-xl-left">
-                                                        <h6 class="mb-1">Email</h6>
-                                                        <p class="text-muted mb-0">username@gmail.com</p>
-                                                    </div>
-                                                </div>
-                                                <div class="bg-gray-dark d-flex d-md-block d-xl-flex flex-row py-3 px-4 px-md-3 px-xl-4 rounded mt-3">
-                                                    <div class="text-md-center text-xl-left">
-                                                        <h6 class="mb-1">Password</h6>
-                                                        <p class="text-muted mb-0">my password</p>
-                                                    </div>
-                                                </div>
+                                                <h3 class="mb-0 text-center text-uppercase">Please Select the password to view</h3>
                                             </div>
-                                            <div class="card-footer">
-                                                <div class="row">
-                                                    <div class="col-6">
-                                                        <a href="#" class="my-2 w-100 badge badge-primary">
-                                                            Update <i class="mdi mdi-update"></i>
-                                                        </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Modal to add password mobile screens -->
+                            <div class="d-block d-md-none d-lg-none d-xl-none">
+                                <div class="revel-password" id="revel-password">
+                                    <div class="modal fade" id="viewPassword" tabindex="-1" aria-labelledby="viewPasswordLabel" aria-hidden="true">
+                                        <div class="modal-dialog modal-dialog-centered mx-3 m-md-auto m-xl-auto m-lg-auto">
+                                            <div class="modal-content">
+                                                <div class="modal-body">
+                                                    <div class="d-none d-md-block d-xl-block mt-2 my-md-3 my-xl-3 text-center">
+                                                        <img class="img-fluid bg-light rounded-circle p-3 w-25" src="assets/images/favicon.png">
                                                     </div>
-                                                    <div class="col-6">
-                                                        <a href="#" class="mt-2 w-100 badge badge-danger">
-                                                            Delete <i class="mdi mdi-delete"></i>
-                                                        </a>
-                                                    </div>
+                                                    <h3 class="mb-0 text-center text-uppercase">Please Select the password to view</h3>
                                                 </div>
                                             </div>
                                         </div>

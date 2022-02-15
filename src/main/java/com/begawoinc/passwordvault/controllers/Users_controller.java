@@ -106,9 +106,9 @@ public class Users_controller extends HttpServlet {
             message = "com.begawoinc.passwordvault.controllers.User_controller.userLogin()" + e.getMessage();
         } finally {
             if (message.equals(AuthResponseMessages.LOGIN_SUCCESS.getAuthResponseMessage())) {
-                response.sendRedirect("index.jsp?message=" + message);
+                response.sendRedirect("dashboard?message=" + message);
             } else {
-                response.sendRedirect("login.jsp?message=" + message);
+                response.sendRedirect("login?message=" + message);
             }
         }
 
@@ -123,14 +123,14 @@ public class Users_controller extends HttpServlet {
         } catch (Exception e) {
             message = "com.begawoinc.passwordvault.controllers.User_controller.register_user()" + e.getMessage();
         } finally {
-            response.sendRedirect("login.jsp?message=" + message + " please login to continue");
+            response.sendRedirect("login?message=" + message + " please login to continue");
         }
     }
 
     private void logoutUser(HttpServletRequest request, HttpServletResponse response) throws IOException {
         HttpSession session = request.getSession();
         session.invalidate();
-        response.sendRedirect("login.jsp");
+        response.sendRedirect("login");
     }
 
     private void updateUser(HttpServletRequest request, HttpServletResponse response) throws IOException {
@@ -145,7 +145,7 @@ public class Users_controller extends HttpServlet {
         } catch (Exception e) {
             message = "com.begawoinc.passwordvault.controllers.User_controller.updateUser()" + e.getMessage();
         } finally {
-            response.sendRedirect("profile.jsp?message=" + message);
+            response.sendRedirect("profile?message=" + message);
         }
     }
 
