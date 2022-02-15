@@ -8,6 +8,7 @@ package com.begawoinc.passwordvault.service;
 import com.begawoinc.passwordvault.dao.Passwords_dao;
 import com.begawoinc.passwordvault.model.Passwords;
 import com.begawoinc.passwordvault.utility.Cipher;
+import com.begawoinc.passwordvault.utility.Utils;
 import java.util.List;
 
 /**
@@ -27,7 +28,6 @@ public class Passwords_service {
         this.password.setUser_email(password.getUser_email());
         this.password.setApp_name(password.getApp_name());
         this.password.setUrl(password.getUrl());
-        System.out.println("com.begawoinc.passwordvault.dao.Passwords_dao.addPassword()::" + this.password.getUrl());
         return password_dao.addPassword(this.password);
     }
 

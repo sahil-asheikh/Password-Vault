@@ -155,7 +155,7 @@
 <!--                    <input type="text" required class="form-control" placeholder="Password" name="password" value="<%= Utils.isEmpty(password.getPassword()) ? "Password Not Found" : Cipher.decrypt(password.getPassword(), password.getPassword_key())%>">-->
                 </div>
                 <button type="submit" class="btn btn-danger w-100 mb-3 mr-2 float-left">Delete</button>
-                <button class="btn btn-success w-100 float-right" data-dismiss="modal">Cancel</button>
+                <button class="btn btn-dark w-100 float-right" data-dismiss="modal">Cancel</button>
             </form>
         </div>
     </div>
