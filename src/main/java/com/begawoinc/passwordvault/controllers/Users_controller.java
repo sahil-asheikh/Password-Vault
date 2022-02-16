@@ -50,6 +50,7 @@ public class Users_controller extends HttpServlet {
                 break;
             case "logout":
                 logoutUser(request, response);
+                break;
             case "updateUser":
                 updateUser(request, response);
             default:
