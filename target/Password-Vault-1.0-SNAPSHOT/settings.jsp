@@ -86,10 +86,9 @@
                                                 <div class="form-group">
                                                     <label for="exampleSelectGender">Gender</label>
                                                     <select class="form-control" name="gender">
-                                                        <option value="<%= Utils.isEmpty(userNav.getGender()) ? "" : userNav.getGender()%>" disabled selected><%= Utils.isEmpty(userNav.getGender()) ? "Please Select Your Gender" : userNav.getGender()%></option>
-                                                        <option value="Male">Male</option>
-                                                        <option value="Female">Female</option>
-                                                        <option value="Other">Other</option>
+                                                        <option value="Male" <%= userNav.getGender().equals("Male") ? "selected" : ""%>>Male</option>
+                                                        <option value="Female" <%= userNav.getGender().equals("Female") ? "selected" : ""%>>Female</option>
+                                                        <option value="Other" <%= userNav.getGender().equals("Other") ? "selected" : ""%>>Other</option>
                                                     </select>
                                                 </div>
                                                 <hr class="dropdown-divider my-3" >

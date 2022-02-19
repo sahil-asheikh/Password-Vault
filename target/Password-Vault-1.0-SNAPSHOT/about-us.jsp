@@ -39,26 +39,34 @@
 
     </head>
     <body>
-        <div class="container-scroller">
+        <div style="background-color: #000000" class="container-scroller">
             <!--Side bar-->
-            <%@include file="sidebar.jsp" %>
             <!--/Side bar-->
             <div class="container-fluid page-body-wrapper">
                 <!--Nav bar-->
-                <%@include file="navbar.jsp" %>
                 <!--/Nav bar-->
                 <div class="main-panel">
 
                     <!--Main content-->
                     <div class="content-wrapper">
 
-                        <h1>About us</h1>
+                        <h3>About us</h3>
+                        <hr class="dropdown-divider">
+                        <p>
+                            Welcome to <span class="fw-bold text-uppercase">Password Vault</span>, <br>
+                            Well this application is developed by <a href="https://sahil-asheikh.github.io"><span class="fw-bold text-uppercase text-light"> Sahil A Sheikh</span></a>
+                            to store the passwords in the encrypted form in the database because many of the peoples have multiple accounts on the internet 
+                            but the forgot the passwords, so I thought to develop a application to store them and manage using master password.
+                        </p>
+
+                        <div class="text-center mt-xl-2">
+                            <a class="text-white font-weight-medium btn btn-primary" href="dashboard">Back to home</a>
+                        </div>
 
                     </div>
                     <!--/Main content-->
 
                     <!--Footer-->
-                    <%@include file="footer.jsp" %>
                     <!--/Footer-->
                 </div>
                 <!-- main-panel ends -->

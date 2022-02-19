@@ -50,6 +50,9 @@
                                     <div class="card col-lg-4 mx-md-auto">
                                         <div class="card-body px-md-5">
                                             <h3 class="card-title text-left mb-3">Register</h3>
+                                            <div class="form-group text-center">
+                                                <label>${param.message}</label>
+                                            </div>
                                             <form action="Users_controller" method="get">
                                                 <input type="hidden" name="action" value="signup">
                                                 <div class="form-group">
@@ -67,12 +70,6 @@
                                                 <div class="text-center">
                                                     <button type="submit" class="btn btn-primary btn-block enter-btn">Register</button>
                                                 </div>
-                                                <!--<div class="d-flex">
-                                                    <button class="btn btn-facebook col mr-2">
-                                                        <i class="mdi mdi-facebook"></i> Facebook </button>
-                                                    <button class="btn btn-google col">
-                                                        <i class="mdi mdi-google-plus"></i> Google plus </button>
-                                                </div>-->
                                                 <p class="sign-up text-center">Already have an Account?<a href="login"> Login</a></p>
                                                 <p class="terms">By creating an account you are accepting our<a href="terms-condition"> Terms & Conditions</a></p>
                                             </form>

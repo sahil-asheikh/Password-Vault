@@ -62,7 +62,7 @@
                 <span class="menu-title beg-font-mplusrounded1c">Log out</span>
             </a>
         </li>
-        <!--<li class="nav-item menu-items">
+        <li class="nav-item menu-items">
             <div role="separator" class="dropdown-divider"></div>
         </li>
         <li class="nav-item nav-category">
@@ -83,6 +83,6 @@
                 </span>
                 <span class="menu-title beg-font-mplusrounded1c">Abouts</span>
             </a>
-        </li>-->
+        </li>
     </ul>
 </nav>

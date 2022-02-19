@@ -39,26 +39,42 @@
 
     </head>
     <body>
-        <div class="container-scroller">
+        <div style="background-color: #000000" class="container-scroller">
             <!--Side bar-->
-            <%@include file="sidebar.jsp" %>
             <!--/Side bar-->
             <div class="container-fluid page-body-wrapper">
                 <!--Nav bar-->
-                <%@include file="navbar.jsp" %>
                 <!--/Nav bar-->
                 <div class="main-panel">
 
                     <!--Main content-->
                     <div class="content-wrapper">
 
-                        <h1>Terms and Conditions</h1>
+                        <h3>Terms and Conditions</h3>
+                        <hr class="dropdown-divider">
+                        <p>
+                            Welcome to <span class="fw-bold text-uppercase">Password Vault</span>, <br>
+                            Well this application is developed by <a href="https://sahil-asheikh.github.io"><span class="fw-bold text-uppercase text-light"> Sahil A Sheikh</span></a>
+                            to store the passwords in the encrypted form in the database because many of the peoples have multiple accounts on the internet but the forgot the passwords, so I thought to develop a application to store them and manage using master password.
+                        </p>
+                        <br>
+                        <h3>Guide Lines</h3>
+                        <hr class="dropdown-divider">
+                        <p>
+                            Basically I do encrypt the passwords before storing in the database but indeed it can access by key that we store in the database with the passwords too, basically this is my personal project that I have developed to show my web development skills,
+                            if you are using this application them make sure to keep this points in your mind. <br>
+                            Thank you, <br>
+                            <a href="https://sahil-asheikh.github.io"><span class="fw-bold text-uppercase text-light"> Sahil A Sheikh</span></a>
+                        </p>
+
+                        <div class="text-center mt-xl-2">
+                            <a class="text-white font-weight-medium btn btn-primary" href="dashboard">Back to home</a>
+                        </div>
 
                     </div>
                     <!--/Main content-->
 
                     <!--Footer-->
-                    <%@include file="footer.jsp" %>
                     <!--/Footer-->
                 </div>
                 <!-- main-panel ends -->

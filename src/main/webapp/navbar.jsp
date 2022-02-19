@@ -10,7 +10,7 @@
 <%
     String user_primary_key = String.valueOf(session.getAttribute("user_primary_key"));
     if (Utils.isEmpty(user_primary_key)) {
-        response.sendRedirect("login?msg=Login Frist");
+        response.sendRedirect("login?message=Please login to continue");
     }
 
     Users_service users_serviceNav = new Users_service();
@@ -21,8 +21,8 @@
 <nav class="navbar p-0 fixed-top d-flex flex-row">
     <div class="navbar-brand-wrapper d-flex d-lg-none align-items-center justify-content-center">
         <a class="navbar-brand brand-logo-mini beg-font-mplusrounded1c" href="dashboard">
-            <!--<img src="assets/images/favicon.png" alt="logo" />-->
-            <span class="text-light  beg-font-mplusrounded1c">Password Vault</span>
+            <img class="d-block d-md-none d-lg-none d-xl-none" src="assets/images/favicon.png" alt="logo"/>
+            <span class="text-light beg-font-mplusrounded1c d-none d-md-block d-lg-block d-xl-block">Password Vault</span>
         </a>
     </div>
     <div class="navbar-menu-wrapper flex-grow d-flex align-items-stretch">
@@ -34,6 +34,7 @@
                 <!--<form class="nav-link mt-2 mt-md-0 d-none d-lg-flex search">
                     <input type="text" class="form-control beg-font-mplusrounded1c" placeholder="Search passwords">
                 </form>-->
+                <label>${param.message}</label>
             </li>
         </ul>
         <!--Add Password-->
